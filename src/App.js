@@ -5,8 +5,26 @@ function App() {
     <div className="ParetBox">
       <FotoPorduct />
       <ProductInfo isDiscount="true" category="Ramadhan" name="All star 2" />
+      <div className="Review-box">
+        <h2>Reviews</h2>
+        <div className="Item">
+          <img src="logo192.png" width="50" />
+          <h1>Lorem ipsum</h1>
+          <p>Lorem ipsum dolor sit amet</p>
+        </div>
+      </div>
     </div>
   );
+}
+
+function ReviewItems() {
+  // Siapkan data
+  const users = [
+    {id: 1, name: "Rijal bin Husen", review: "Lorem ipsum dolor sit amet"},
+    {id: 2, name: "Husen", review: "Lorem ipsum dolor sit amet"},
+    {id: 3, name: "Rijal", review: "Lorem ipsum dolor sit amet"},
+    {id: 4, name: "Abu rijal", review: "Lorem ipsum dolor sit amet"}
+  ]
 }
 
 function FotoPorduct() {

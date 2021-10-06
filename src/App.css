@@ -7,13 +7,15 @@
 
 .Foto {
   float: left;
-  width: 50%;
-  height: 700px;
+  width: 30%;
+  height: 300px;
   background: #e3e9ee;
+  text-align: center;
+  padding: 50px;
 }
 
 .Foto img {
-  width: 100%;
+  width: 80%;
 }
 
 .Deskripsi {
@@ -40,4 +42,39 @@
 
 .Deskripsi .Category {
   color: #acaeb2;
+}
+
+.Review-box {
+  clear: both;
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 100px;
+}
+
+.Review-box h2 {
+  margin-top: 50px;
+}
+
+.Review-box img {
+  width: 80px;
+  height: 80px;
+  background: #b1b1b1;
+  border-radius: 11px;
+  float: left;
+  margin-right:  16px;
+}
+
+.Review-box .User p, h3 {
+  margin:  0;
+}
+
+.Review-box .User h3 {
+  padding-top: 10px;
+  margin-bottom: 8px;
+}
+
+.Review-box .Item {
+  width: 80%;
+  overflow: hidden;
+  margin-bottom: 24px;
 }
