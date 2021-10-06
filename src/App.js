@@ -1,11 +1,11 @@
 import "./App.css";
 import ReviewItems from "./components/Reviews";
-
+import propTypes from "prop-types";
 function App() {
   return (
     <div className="ParetBox">
       <FotoPorduct />
-      <ProductInfo isDiscount="true" category="Ramadhan" name="All star 2" />
+      <ProductInfo discount={50} category="Ramadhan" name="All star 2" />
       <div className="Review-box">
         <h2>Reviews</h2>
         <ReviewItems />
@@ -23,30 +23,27 @@ function FotoPorduct() {
 }
 
 function ProductInfo(props) {
-  const { category, name, isDiscount } = props;
+  const { category, name, discount } = props;
   const benefit = [
     "Tidak kusut terkena air",
     "Tidak seperti ini",
     "Tidak seperti itu",
   ];
-  const listBenefits = benefit.map((value) => <li>{value}</li>);
+  const listBenefits = benefit.map((value, id) => <li key={id}>{value}</li>);
 
   return (
-    <div class="Deskripsi">
+    <div className="Deskripsi">
       <p className="Category">{category}</p>
       <p className="Title">{name}</p>
       <p className="Price">IDR 7.893.121</p>
-      <CheckDiscount isDiscount={isDiscount} />
+      <CheckDiscount discount={discount} />
       <p className="Info">
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry. Lorem Ipsum has been the industry's standard dummy text ever
         since the 1500s
       </p>
-      <ul>
-        <li>{listBenefits}</li>
-      </ul>
-      <a onClick={(e) => TambahCart(name, e)} href="#">
-        {" "}
+      <ul>{listBenefits}</ul>
+      <a onClick={(e) => TambahCart(name, e)} href="#test">
         Tambah cart
       </a>
     </div>
@@ -59,12 +56,16 @@ function TambahCart(e) {
 }
 
 function CheckDiscount(props) {
-  const { isDiscount } = props;
-  if (isDiscount == "true") {
-    return <p>Discount 50% off</p>;
+  const { discount } = props;
+  if (discount) {
+    return <p>Discount {discount}% off</p>;
   } else {
     return <p>Discount not availbale yet</p>;
   }
 }
+
+CheckDiscount.propTypes = {
+  discount: propTypes.number.isRequired,
+};
 
 export default App;

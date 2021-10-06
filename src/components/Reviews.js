@@ -10,7 +10,7 @@ function ReviewItems() {
   ];
 
   const listReview = users.map((val) => (
-    <div className="Item">
+    <div key={val.id} className="Item">
       <img src="logo192.png" className="User" alt="user" width="30" />
       <h1>{val.name}</h1>
       <p>{val.review}</p>
