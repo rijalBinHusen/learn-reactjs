@@ -1,17 +1,43 @@
 .Parentbox {
   width:  80%;
-  height: 300px;
+  overflow: hidden;
   margin: auto;
   margin-top: 100px;
-  overflow: hidden;
 }
 
 .Foto {
-  width: 30%;
-  height: 400px;
-  background: red;
+  float: left;
+  width: 50%;
+  height: 700px;
+  background: #e3e9ee;
 }
 
 .Foto img {
-  width: 300px;
+  width: 100%;
+}
+
+.Deskripsi {
+  width: 40%;
+  overflow: hidden;
+  float: left;
+  margin-left: 30px;
+}
+
+.Deskripsi .info {
+  line-height: 1.0;
+  color: rgb(18,11,49);
+}
+
+.Deskripsi .Price {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.Deskripsi .Title {
+  margin:  0;
+  color: #acaeb2;
+}
+
+.Deskripsi .Category {
+  color: #acaeb2;
 }
