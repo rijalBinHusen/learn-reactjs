@@ -4,7 +4,7 @@ function App() {
   return (
     <div className="ParetBox">
       <FotoPorduct />
-      <ProductInfo category="Ramadhan" name="All star 2" />
+      <ProductInfo isDiscount="true" category="Ramadhan" name="All star 2" />
     </div>
   );
 }
@@ -18,7 +18,7 @@ function FotoPorduct() {
 }
 
 function ProductInfo(props) {
-  const {category, name} = props
+  const {category, name, isDiscount} = props
   const price = 7893121;
 
   return (
@@ -26,6 +26,7 @@ function ProductInfo(props) {
       <p className="Category">{category}</p>
       <p className="Title">{name}</p>
       <p className="Price">IDR {price}</p>
+      <CheckDiscount isDiscount={isDiscount} />
       <p className="Info">
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry. Lorem Ipsum has been the industry's standard dummy text ever
@@ -45,6 +46,20 @@ function ProductInfo(props) {
 function TambahCart(e) {
   // dont forget semicolon
   return console.log("Membeli product " + e);
+}
+
+function CheckDiscount(props) {
+  const { isDiscount } = props
+  if(isDiscount == "true") {
+    return (
+        <p>Discount 50% off</p>
+      );
+  }
+  else {
+    return (
+      <p>Discount not availbale yet</p>
+    );
+  }
 }
 
 export default App;
