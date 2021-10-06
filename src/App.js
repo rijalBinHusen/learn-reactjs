@@ -37,14 +37,14 @@ function ProductInfo(props) {
         with desktop publishing software like Aldus PageMaker including versions
         of Lorem
       </p>
-      <a onClick={TambahCart} href="#"> Tambah cart</a>
+      <a onClick={ (e) => TambahCart(name, e) } href="#"> Tambah cart</a>
     </div>
   );
 }
 
-function TambahCart() {
+function TambahCart(e) {
   // dont forget semicolon
-  return console.log("Membeli product");
+  return console.log("Membeli product " + e);
 }
 
 export default App;
