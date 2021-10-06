@@ -37,8 +37,14 @@ function ProductInfo(props) {
         with desktop publishing software like Aldus PageMaker including versions
         of Lorem
       </p>
+      <a onClick={TambahCart} href="#"> Tambah cart</a>
     </div>
   );
+}
+
+function TambahCart() {
+  // dont forget semicolon
+  return console.log("Membeli product");
 }
 
 export default App;
